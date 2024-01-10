@@ -1,72 +1,62 @@
-# Sprint 3 IT Academy | Shop
+Targets
+Put JavaScript concepts into practice.
+Learn to manipulate a data set.
+Split our code into functions, and know how to reuse them.
 
-## Introduction
+A company in the e-commerce sector has asked us for a web application, which allows it to offer the purchase of its products via the internet.
+You will be in charge of setting up an initial demo version of the application for the client: management of the shopping cart and the application of promotions on the final price.
 
-A company in the e-commerce sector has asked us for a web application that allows them to offer the purchase of their products through the internet.
+Exercise 1
+added function is called buy(), which receives the ID of the product to add. You must locate the product using this identifier received in the products array, then include it in the cart array.The buttons that should trigger the buy() function are the blue ones found on each product.
+For each product that you want to add to the cart, we must validate if it has already been added previously, being part of the cart array :
+If it doesn't exist, we add it to the cart array (make sure you don't forget to add the quantity property with value 1 to the product before pushing it). If, on the other hand, this product is already in the cart, we will have to increase the quantity field of this product in the cart.
 
-You will be in charge of setting up an initial demo version of the application for the client: management of the shopping cart and the application of the promotions on the final price. You have 2 weeks to finish, which is how long this sprint lasts.
+Exercise 2
+Now we will implement a function that allows the user to delete the array generated in the previous exercise: empty the cart .
+On this occasion, you will have to fill in the cleanCart() function , which should reinitialize the cartList variable.
 
-<br>
+Exercise 3
+calculate the total amount of the cart. 
+A for loop must be implemented  to add up the amount of all the products.
 
-## Requirements
+Exercise 4
+implement promotions,  a very important section in any store.
 
+For this reason, he has specified two types of promotions that he wants for his e-commerce:
+If the user buys 3 or more bottles of oil, the price of the product is reduced by 20%.
+When buying 10 or more cake products, the price of the product is reduced by 30%.
+In this exercise you must complete the applyPromotionsCart() function , which receives the cart array, modifying the subtotalWithDiscount field in case the promotion is applied. Everything must be dynamic.
 
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3
-```
+Help: Since each product in the cart has a quantity, you can validate if a discount can be applied:
 
-2. Unlink your repo from the itacademy repository.
-(Explanation: You have to upload the code to your GitHub repository, not to the IT Academy. That's why you have to unlink your project from IT Academy GitHub with the following command)
+In case a product has a discount, the total price with discount must be saved in the field: subtotalWithDiscount.
+If no discount is to be applied, you don't need to save anything.
 
-```bash
-$ git remote rm origin
-```
+Exercise 5
+show the user the shopping cart .
+The code responsible for displaying the shopping cart in the modal with id " cartModal ", must be included in the printCart() function. We give you the layout of the product table already created, you only need to modify it so that it is dynamic .
+The cart mode is opened by pressing the cart button at the top right of the screen:
 
-3. Link your repo to the repository you have to create in your github account
-(Explanation: Now your project is not linked to any remote repository. In order to upload your code, you have to link your project to the new repository created on github.com using the following command)
+Exercise 6
+implement the validation of the checkout form found in the checkout.js file.
+To access this screen, you must click on the cart icon at the top right of the screen, a modal will appear with the button that will take you to this screen.
+Your first goal will be to validate the  checkout.html form using the  checkout.js file
 
-```bash
-$ git remote add origin <your repo name!>
-```
+the logic so that the form fields meet the following conditions:
+- All fields are required.
+- All fields must have at least 3 characters.
+- The first and last name must contain only letters.
+- The phone must contain only numbers.
+- The password must include numbers and letters.
+- The email must have email format.
 
-<br>
+When the user enters a field that does not meet the above validations, the input should be highlighted in red and a message displayed at the bottom.
+Help: You can color the border of the input red and show the error message by manipulating the dom, although you can also use bootstrap's is-invalid class.
 
-## Submission
+Exercise 7
+provided an essential functionality to the user: remove products from the cart.
+You must complete the removeFromCart() function, which receives the id of the product for which the quantity should be decreased by one unit.
+Remember that if the quantity of the product to be reduced is 1, you must remove it from the cart, not reduce its quantity to 0.
 
-1. Upon completion, run the following commands:
-
-```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
-```
-
-2. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
-
-
-
-<br>
-
-## Introduction
-
-The statement of the exercise is available on the virtual campus.
-
-<br>
-
-
-## Instructions
-
-You have the following indications from the frontend manager:
-
-- You have prepared the base of the project on which you will work: https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3
-
-- The base of the project on which you will work has already created all the files, and an initial version of the interface, so you can focus on programming the logic.
-
-- As at the moment we don't consume data from a server using an API, we will work with hardcoded data in the application. For the moment we will implement the logic using a small group of 9 products divided in 3 sections.
-
-- Except for the last level, showing the result of the functions by console is enough.
-
-- The logic to implement will be placed in the src/grocery.js and src/checkout.js files. You will see that the built in functions have already been created for you to implement them.
-
-- It is forbidden to copy the code, since this way you don't learn anything. Furthermore, as you can see, the second release of sprint 5 is a mini-level test with the mentor, in which you will have to demonstrate live that you have acquired the javascript concepts. Don't worry, if you work on the releases you won't have any problems.
+Exercise 8
+layout the website so that it has a professional appearance: fixed navbar on top, added notice when product added and removed, added redirects to the sections and main page when on checkouts. 
